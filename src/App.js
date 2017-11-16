@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Row, Col } from 'antd'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import * as indexAction from './actions'
@@ -23,24 +24,28 @@ class App extends Component {
   }
   render() {
     const { echartsBar, echartsPie2, echartsGauge } = this.props
+    console.log(setMapOption)
     return (
-      <div className="App">
-        <div>
-          <BarEcharts option={setBarOption(echartsBar)}/>
-        </div>
-        <br/>
-        <div>
-          <GaugeEcharts option={setGaugeOption(echartsGauge)}/>
-        </div>
-        <br/>
-        <div>
-          <PieEcharts option={setPieOption2(echartsPie2)} height={'500px'}/>
-        </div>
-        <br/>
-        <div>
-          <MapEcharts option={setMapOption()} height={'500px'}/>
-        </div>
-      </div>
+      <Row>
+        <Col md={{span:18,offset:3,}} sm={{span:20,offset:2}} xs={{span:24}}>
+          <div>
+            <MapEcharts option={setMapOption()} height={'500px'}/>
+          </div>
+          <br/>
+          <div>
+            <BarEcharts option={setBarOption(echartsBar)}/>
+          </div>
+          <br/>
+          <div>
+            <GaugeEcharts option={setGaugeOption(echartsGauge)}/>
+          </div>
+          <br/>
+          <div>
+            <PieEcharts option={setPieOption2(echartsPie2)} height={'500px'}/>
+          </div>
+          <br/>
+        </Col>
+      </Row>
     );
   }
 }
