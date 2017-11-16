@@ -7,7 +7,7 @@
 - 异步加载是参考github上某个项目的(我直接拿来用了[项目找不到了])
 
 
-### 使用方法
+##### 使用方法
 
 - 异步加载使用说明  
 
@@ -18,7 +18,7 @@ const PieEcharts = asyncComponent(() => import(/* webpackChunkName: "PieReact" *
 
 ```
 
-###  模块引入说明
+#####  模块引入说明
 
 - 例如下面的option [option参考echarts图表配置手册]
 
